@@ -18,7 +18,7 @@ public class Main {
                 if (command.equals("\r\n")) {
                     break;
                 }
-                System.out.println("result: " + calculator.calculate() + "\n");
+
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
