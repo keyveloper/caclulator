@@ -6,8 +6,17 @@ import java.util.Stack;
 
 @Data
 public class BinarySearchTree {
-    public Node setTree(String postfix) {
+    public Node setTree(String infix) {
 
     }
 
+
+
 }
+
+
+
+
+
+
+z
