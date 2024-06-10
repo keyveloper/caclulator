@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class BstNode {
-    private final int value;
+    private char value;
     BstNode left, right, prev;
 }

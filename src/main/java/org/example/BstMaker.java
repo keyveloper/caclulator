@@ -22,9 +22,20 @@ public class BstMaker {
                 while (operators.peak().getData() != '(') {
                     bstNodes.push(setSubtree(value, bstNodes));
                 }
+                // remove ('(')
+                operators.pop();
+                continue;
+            }
+
+            // operator -> check priority!
+            if (isOperator(value)) {
+                while (operators.size() != 0 && getPriority(operators.peak().getData()) >= getPriority(value)) {
+                    bstNodes.push(setSubtree(operators.pop().getData(), bstNodes));
+                }
+                operators.push(new StackNode(value));
             }
         }
-
+        return bstNodes.pop();
     }
 
     private static BstNode setSubtree(char operator, CustomBstStack bstNodes) {
@@ -34,6 +45,11 @@ public class BstMaker {
         node.setLeft(left);
         node.setRight(right);
         return node;
+    }
+
+    private static boolean isOperator(char op) {
+        // 이거 로직 생각해보기
+        return true;
     }
 
     private static int getPriority(char operator) {
